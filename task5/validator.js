@@ -48,8 +48,9 @@ function addressCheck(){
 }
 function passCheck(){
 	var pass;
+	var re=/^[a-zA-Z0-9]+$/;
 	pass=document.forms['registration'].elements['pass'].value;
-	if(pass.length<6||pass.length>18){
+	if(pass.length<6||pass.length>18||!pass.match(re)){
 	document.getElementById("passVal").innerHTML = "Invalid password.";
 	}
 	else
@@ -61,13 +62,22 @@ function c_passCheck(){
 	var pass;
 	pass=document.forms['registration'].elements['pass'].value;
 	c_pass=document.forms['registration'].elements['c_pass'].value;
-	if(pass!=c_pass){
-	document.getElementById("c_passVal").innerHTML = "Passwords dont match.";
+	if(pass==c_pass){
+		document.getElementById("c_passVal").innerHTML = "";
 	}
 	else
-		document.getElementById("c_passVal").innerHTML = "";
+		document.getElementById("c_passVal").innerHTML = "Passwords dont match.";
 		
 }
+
+function validatePassConent(pass){
+	var re=new RegExp("^[a-zA-Z0-9]+$", "g");
+	if(re.test(pass)){
+		false;
+	}
+	else 
+		true;
+} 
 
 function validation(){
 	f_nameCheck();
