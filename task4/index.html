@@ -1,0 +1,28 @@
+	<!DOCTYPE html>
+<html>
+	<head>
+	<title>task4</title>
+	</head>
+	<body>
+		<form name="validator">
+			First Name:
+			<br>
+			<input type="text" name="firstname" id="fn" value="">	
+		</form>
+		<button type="button" onclick="fieldCheck()">Check if it's empty.</button>	
+		<p id="result"> </p>
+		<script>
+	function fieldCheck(){
+	var text;
+	text=document.forms['validator'].elements['firstname'].value;
+		if(text == ""){
+		document.getElementById("result").innerHTML = "Field is empty";
+		}
+		else 
+			document.getElementById("result").innerHTML = "Field is not empty input is "+text;
+	}
+	</script>
+	</body>	
+</html>
+			
+	
