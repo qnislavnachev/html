@@ -22,14 +22,12 @@ function concatOperator(operator){
 	value=value.concat(operator);
 	document.getElementById("output").value = value;
 	}
-	theOperator=operator;
 }
 
 function equals(){
 	var operands=document.getElementById("output").value;
 	var result=eval(operands);
 	document.getElementById("output").value=result;
-	theOperator="";
 }
 
 
