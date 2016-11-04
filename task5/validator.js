@@ -9,7 +9,7 @@ function nameCheck(formName){
 function egnCheck(){
 	var egn;
 	egn=document.forms['registration'].elements['egn'].value;
-	if(egn.length<10||egn.length>10){
+	if(egn.length<10||egn.length>10||!egn.match([/^[0-9]+$/])){
 	var current=document.getElementById("val").value;
 	document.getElementById("val").value = current.concat("\nEGN should be 10 digits long.");
 	}
@@ -17,7 +17,7 @@ function egnCheck(){
 function ageCheck(){
 	var age;
 	age=document.forms['registration'].elements['age'].value;
-	if(age<18||age>118){
+	if(age<18||age>118||!age.match([/^[0-9]+$/])){
 	var current=document.getElementById("val").value;
 	document.getElementById("val").value = current.concat("\nAge should be between 18 and 118.");
 	}
