@@ -1,8 +1,7 @@
 function nameCheck(formName){
 	var name=document.forms['registration'].elements[formName].value;
 		if((name.length <1)||(name.length>15)){
-	    var current=document.getElementById("val").value;
-		document.getElementById("val").value = current.concat("\nNames should be between 1 and 15 charecters");
+		document.getElementById("val").value+=("\nNames should be between 1 and 15 charecters");
 		}
 }
 
