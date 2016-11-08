@@ -1,11 +1,11 @@
-function nameCheck(formName){
+function validateName(formName){
 	var name=document.forms['registration'].elements[formName].value;
 		if((name.length <1)||(name.length>15)){
 		document.getElementById("val").value+=("\nNames should be between 1 and 15 charecters");
 		}
 }
 
-function egnCheck(){
+function validateEgn(){
 	var egn;
 	egn=document.forms['registration'].elements['egn'].value;
 	if(egn.length<10||egn.length>10||!egn.match([/^[0-9]+$/])){
@@ -13,7 +13,7 @@ function egnCheck(){
 	document.getElementById("val").value = current.concat("\nEGN should be 10 digits long.");
 	}
 }
-function ageCheck(){
+function validateAge(){
 	var age;
 	age=document.forms['registration'].elements['age'].value;
 	if(age<18||age>118||!age.match([/^[0-9]+$/])){
@@ -21,7 +21,7 @@ function ageCheck(){
 	document.getElementById("val").value = current.concat("\nAge should be between 18 and 118.");
 	}
 }
-function addressCheck(){
+function validateAddress(){
 	var address;
 	address=document.forms['registration'].elements['address'].value;
 	if(address.length<1||address.length>100){
@@ -29,7 +29,7 @@ function addressCheck(){
 	document.getElementById("val").value = current.concat("\nAddress should be between 1 and 100 charecters.");
 	}	
 }
-function passCheck(){
+function validatePass(){
 	var pass;
 	var re=/^[a-zA-Z0-9]+$/;
 	pass=document.forms['registration'].elements['pass'].value;
