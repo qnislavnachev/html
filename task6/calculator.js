@@ -1,4 +1,4 @@
-function concatNumber(number){
+function addNumber(number){
 	var value = document.getElementById("output").value;
 	if(value == 0){
 	document.getElementById("output").value = number;
@@ -9,14 +9,14 @@ function concatNumber(number){
 	}
 }
 
-function concatOperator(operator){
+function addOperator(operator){
 	var value = document.getElementById("output").value;
 	var op=/^[0-9]+$/;
 	if(value==0){
-	document.getElementById("output").value=value;
+	return;
 	}
 	else if(!value.match(op)){
-	document.getElementById("output").value=value;
+	return;
 	}
 	else{
 	value=value.concat(operator);
