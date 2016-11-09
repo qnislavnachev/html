@@ -7,23 +7,23 @@
 		<form name="registration">
 			First Name:
 			<br>
-			<input type="text" onblur="validateName('firstname')" name="firstname">
+			<input type="text" onblur="validateText('firstname', 1, 10, '\nNames should be between 1 and 15 charecters')" name="firstname">
 			<br>
 			Last Name:
 			<br>
-			<input type="text" onblur="validateName('lastname')" name="lastname">
+			<input type="text" onblur="validateText('lastname', 1, 10, '\nNames should be between 1 and 15 charecters')" name="lastname">
 			<br>
 			EGN:
 			<br>
-			<input type="text" onblur="validateEgn()" name="egn">
+			<input type="text" onblur="validateNum(egn, 10, 10, '\nEGN should be 10 digits long.')" name="egn">
 			<br>
 			Age:
 			<br>
-			<input type="text" onblur="validateAge()" name="age">
+			<input type="text" onblur="validateNum(age, 18, 118, '\nAge should be between 18 and 118.')" name="age">
 			<br>
 			Address:
 			<br>
-			<input type="text" onblur="validateAddress()" name="address">
+			<input type="text" onblur="validateText(address, 1, 100, '\nAddress should be between 1 and 100 charecters.')" name="address">
 			<br>
 			Password:
 			<br>
@@ -33,6 +33,11 @@
 			<br>
 			<input type="password" name="c_pass">
 			<br>
+
+			<input
+					type=""
+					onblur="validateNum(egn, 10, 10)"
+					name="xxx">
 		</form>
 		<textarea name="validation" id="val" rows="7" cols="44" readonly></textarea>
 		<script src="validator.js"></script>

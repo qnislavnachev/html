@@ -12,13 +12,9 @@ function addNumber(number){
 function addOperator(operator){
 	var value = document.getElementById("output").value;
 	var op=/^[0-9]+$/;
-	if(value==0){
+	if(value==0 || !value.match(op)){
 	return;
-	}
-	else if(!value.match(op)){
-	return;
-	}
-	else{
+	}else{
 	value=value.concat(operator);
 	document.getElementById("output").value = value;
 	}
@@ -40,9 +36,9 @@ function clearLast(){
 	var current=document.getElementById("output").value;
 	if(current.length==1){
 	document.getElementById("output").value=0;
+	return;
 	}
-	else{
+
 	current=current.substring(0, current.length-1);
 	document.getElementById("output").value=current;
-	}
 }

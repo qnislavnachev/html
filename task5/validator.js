@@ -1,33 +1,16 @@
-function validateName(formName){
-	var name=document.forms['registration'].elements[formName].value;
-		if((name.length <1)||(name.length>15)){
-		document.getElementById("val").value+=("\nNames should be between 1 and 15 charecters");
-		}
-}
-
-function validateEgn(){
-	var egn;
-	egn=document.forms['registration'].elements['egn'].value;
-	if(egn.length<10||egn.length>10||!egn.match([/^[0-9]+$/])){
+function validateText(id, min, max, msg){
+	var txt=document.forms['registration'].elements[id].value;
+	if((txt.length <min)||(txt.length>max)){
 	var current=document.getElementById("val").value;
-	document.getElementById("val").value = current.concat("\nEGN should be 10 digits long.");
+    document.getElementById("val").value = current.concat(msg);
 	}
 }
-function validateAge(){
-	var age;
-	age=document.forms['registration'].elements['age'].value;
-	if(age<18||age>118||!age.match([/^[0-9]+$/])){
-	var current=document.getElementById("val").value;
-	document.getElementById("val").value = current.concat("\nAge should be between 18 and 118.");
-	}
-}
-function validateAddress(){
-	var address;
-	address=document.forms['registration'].elements['address'].value;
-	if(address.length<1||address.length>100){
-	var current=document.getElementById("val").value;
-	document.getElementById("val").value = current.concat("\nAddress should be between 1 and 100 charecters.");
-	}	
+function validateNum(id, min, max, msg){
+    var num = document.forms['registration'].elements[id].value;
+    if(num.length<min||num.length>max||num.match||num.match([/[0-9]+$/])){
+    var current=document.getElementById("val").value;
+    document.getElementById("val").value = current.concat(msg);
+    }
 }
 function validatePass(){
 	var pass;
@@ -38,11 +21,5 @@ function validatePass(){
 	document.getElementById("val").value = current.concat("\nPasword should be between 6 and 18 using numbers and latin charecters only.");
 	}
 }
-function validatePassConent(pass){
-	var re=new RegExp("^[a-zA-Z0-9]+$", "g");
-	if(re.test(pass)){
-		false;
-	}
-	else 
-		true;
-} 
+
+
