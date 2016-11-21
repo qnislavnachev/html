@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		function readData(metohod, endpoint) {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function(){
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("outputField").innerHTML = "<xmp>"+this.responseText+"</xmp>";
+					console.log(this.responseText)
+				}
+			};
+			xhttp.open(metohod, endpoint, true);
+			xhttp.send();
+		}
+	</script>
+</head>
+<body>
+<button type="button" onclick="readData('GET', 'person.xml')">Show xml</button>
+<br><br>
+<div id="outputField">Output will come here</div>
+</body>
+</html>
