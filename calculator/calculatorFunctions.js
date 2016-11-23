@@ -1,31 +1,39 @@
-var regex = /[*/+-]/;
+var dotRegex = /[.]/;
+var operationRegex = /[*/+-]/;
+var calculation = "";
 
 function enterValue(value) {
     display.value += value;
 }
 
 function clearLast() {
-	display.value = display.value.substring(0, display.value.length-1);
+	display.value = display.value.slice(0, display.value.length-1);
 }
 
 function clearDisplay() {
 	display.value = "";
+	calculation = "";
 }
 
 function getSum() {
-	var sum = eval(display.value);
-	display.value = sum;
+	calculation += display.value;
+	display.value = eval(calculation);
 }
 
 function setDot() {
-	if (!display.value.includes(".")) {
+	if (!dotRegex.test(display.value)) {
 		display.value += ".";
 	}
 }
 
 function addOperand(operand) {
-	var lastChar = display.value.slice(display.value.length-1);
-	if (!regex.test(lastChar)) {
-		display.value += operand;
+	var lastOperation = calculation.slice(calculation.length-1);
+	if (!operationRegex.test(lastOperation)) {
+		calculation = calculation + display.value + operand;
+		display.value = "";
+		return;
 	}
+	var subExpression = calculation.slice(0, calculation.length-1);
+	calculation = subExpression + operand;
+	display.value = "";
 }
