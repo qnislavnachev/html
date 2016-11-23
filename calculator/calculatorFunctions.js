@@ -23,6 +23,7 @@ function getSum() {
 function setDot() {
 	if (!dotRegex.test(display.value)) {
 		display.value += ".";
+		calculation += ".";
 	}
 }
 
