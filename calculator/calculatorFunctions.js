@@ -4,6 +4,7 @@ var calculation = "";
 
 function enterValue(value) {
     display.value += value;
+    calculation += value; 
 }
 
 function clearLast() {
@@ -16,7 +17,6 @@ function clearDisplay() {
 }
 
 function getSum() {
-	calculation += display.value;
 	display.value = eval(calculation);
 }
 
@@ -29,7 +29,7 @@ function setDot() {
 function addOperand(operand) {
 	var lastOperation = calculation.slice(calculation.length-1);
 	if (!operationRegex.test(lastOperation)) {
-		calculation = calculation + display.value + operand;
+		calculation += operand;
 		display.value = "";
 		return;
 	}
